@@ -297,3 +297,53 @@ function multiplicationTable() {
                         }
     }
 }
+
+// Rekursiven Funktionen
+// Funktionen, die sich in ihrem Körper selbst aufrufen
+// Müssen immer eine BEdingung enthalten, damit es keine endlos Schleife wird
+// Können schnell inneffizient werden, da es viele Funktionsaufrufe sind
+
+function faculty(limit) {
+    if (limit < 2) {
+        return 1;
+    }
+    else {
+        return limit * faculty(limit - 1);
+    }
+}
+
+// Lambda-Funktionen:
+// Alternativen zu den anonymen Funktionen
+
+// Anonyme Funkten sind Funktionen ohne identifier
+// Weißt man im normalfall einer Variable zu, damit sie wiederverwendbar sind
+// Einfache anonyme Funktion
+
+let sum = function (numOne, numTwo) {return numOne + numTwo};
+let ergebnis3 = sum(8,9);
+
+// Sind identisch zu normalen Funktionen
+
+// Lambdas sind die kompakte Alternative zu den anonymen Funktionen
+// Pfeilfunktionen
+
+let quadruple = (a) => a*4;
+let square = (a) => a*a;
+
+function vervierfachen (a) {
+    return a * 4;
+}
+
+function quadrieren (a) {
+    return a * a;
+}
+
+// Lambdas werden meistens als Parameter für andere Funktionen benutzt 
+
+// wenn eine Lambda Funktion mehrzeilig wird, verliert sie einige ihrer Vorteile
+let mehrzeilig = (a, b) => {
+    a *=2;
+    b *=2;
+    return a *b;
+}
+// Wir brauchen dann wieder die geschweiften Klammern und das return Keyword
