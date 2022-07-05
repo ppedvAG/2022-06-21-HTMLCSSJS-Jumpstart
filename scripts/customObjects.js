@@ -161,3 +161,26 @@ class Auto {
         }
     }
 }
+
+// person1 instanceof Person
+// instanceOf prüft ob ein Objekt eine Instanz einer Klasse ist
+// Syntax:
+// objekt instanceof klasse
+console.log(person1 instanceof Person); // true, da der Konstruktor Person benutzt wurde
+console.log(person1 instanceof Object); // true, da Person von Object erbt
+console.log(person1 instanceof PersonAlt); // false, da ein anderer Constructor benutzt wurde
+
+// in
+// in prüft ob ein prop in einem Objekt enthalten ist
+console.log("age" in person1); // true, da person1 ein Prop namens age enthält
+
+// for in Schleife
+// Sonderform der for Schleife
+
+for (prop in person3) {
+    console.log(`Prop-Name: ${prop} | Wert: ${person3[prop]}`);
+};
+
+// console.table(objekt) stellt uns unser Objekt und dessen Eigenschaften in einer Tabelle dar
+
+console.table(person3);
