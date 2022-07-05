@@ -134,3 +134,30 @@ const person3 = new PersonAlt("Christian Lindner", 49, true, "Cologne");
 // Die Methode soll nur den motorStatus ändern
 // Beschleunige(neueGeschw)
 // Diese Methode soll die derzeitige Geschwindigkeit auf neueGeschw setzen, außer wenn diese die maximale Geschwindigkeit überschreiten würde
+
+class Auto {
+    constructor(marke, modell, maxSpeed) {
+        this.marke = marke;
+        this.modell = modell;
+        this.maxSpeed = maxSpeed;
+        this.currSpeed = 0;
+        this.engineStatus = false;
+    }
+    onOff() {
+        this.engineStatus = !this.engineStatus;
+        console.log(`Motor ist jetzt ${this.engineStatus ? "an" : "aus"}`);
+    }
+    accelerate(newSpeed) {
+        if (this.engineStatus) {
+            if (newSpeed <= this.maxSpeed) {
+                this.currSpeed = newSpeed;
+        }
+            else {
+                console.error("Zu hohe Geschwindigkeit");
+            }
+        }
+        else {
+            console.log("Motor ist nicht an")
+        }
+    }
+}
